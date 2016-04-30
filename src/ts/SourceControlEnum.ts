@@ -1,0 +1,1 @@
+export enum SourceControlEnum { Git, TFVC };

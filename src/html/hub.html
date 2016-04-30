@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Templates</title>
+    <style>
+        html, body, #hubMountPoint, #hubMountPoint > div {
+            width: 100%;
+            height: 100%;
+        }
+
+        .template {
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .template-list {
+            margin: 0 10px 10px;
+            padding: 0 10px 10px;
+            flex-grow: 0.3;
+            overflow: auto;
+        }
+
+        .template-list-add-new {
+            margin: 10px;
+            width: 95%;
+        }
+
+        .template-list-item {
+            margin: 10px;
+        }
+
+        .template-list-item.selected {
+            font-weight: bold;
+            padding: 0 0 4px 0;
+            border-bottom: 5px solid #007acc;
+            color: #007acc;
+        }
+
+        .template-edit {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 0.7
+        }
+
+        .template-edit-input {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-edit-input > div {
+            flex-grow: 1;
+        }
+
+        .template-edit-input-title {
+            margin-top: 10px;
+        }
+
+        .template-edit-input-title, .template-edit-input-nameTemplate {
+            width: 100%;
+            padding: 10px;
+            height: 20px;
+            margin-bottom: 10px
+        }
+
+        .template-edit-buttons {
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+<div id="hubMountPoint">
+
+</div>
+<script src="lib/VSS.SDK.min.js"></script>
+<script type="text/javascript">
+    VSS.init({
+        explicitNotifyLoaded: true,
+        usePlatformScripts: true,
+        usePlatformStyles: true
+    });
+
+    VSS.ready(function () {
+        var notifySucceededTimeout = setTimeout(function () {
+            VSS.notifyLoadSucceeded();
+        }, 500);
+        require(["dist/bundle"], function (main) {
+            clearTimeout(notifySucceededTimeout);
+            VSS.notifyLoadSucceeded();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "name": "vsts-template-file-creation",
+  "version": "0.0.1",
+  "description": "Provides a way to create files from templates like java files, enums, ... in vsts.",
+  "keywords": [
+    "vsts",
+    "tfs",
+    "template"
+  ],
+  "scripts": {
+    "build": "gulp && npm run package",
+    "initdev": "typings install",
+    "package": "tfx extension create --manifest-globs vss-extension.json",
+    "publish": "tfx extension publish --token <token> --manifest-globs vss-extension.json"
+  },
+  "author": "Serhii Shyiko",
+  "license": "MIT",
+  "devDependencies": {
+    "copyfiles": "^0.2.1",
+    "jquery": "^2.2.2",
+    "requirejs": "2.1.22",
+    "tfx-cli": "^0.3.19",
+    "tsconfig-glob": "^0.4.0",
+    "typescript": "^1.7.5",
+    "typings": "^0.6.6",
+    "vset": "^0.4.24",
+    "vss-web-extension-sdk": "^1.98.0",
+    "babel": "^5.8.29",
+    "babel-loader": "^5.3.2",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "ts-loader": "^0.6.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "ace": "^0.3.2",
+    "handlebars": "^4.0.5",
+    "react": "^15.0.1",
+    "react-ace": "^3.4.0",
+    "react-dom": "^15.0.1"
+  }
+}

@@ -1,0 +1,30 @@
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "noImplicitAny": false,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "outDir": "./built",
+    "sourceMap": true
+  },
+  "filesGlob": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "!./node_modules/**/*"
+  ],
+  "files": [
+    "./typings/main.d.ts",
+    "./src/ts/entry.ts",
+    "./src/ts/AddFileMenu.ts",
+    "./src/ts/AddFileDialog.ts",
+    "./src/ts/SourceControlEnum.ts",
+    "./src/ts/TFVCFileManager.ts",
+    "./src/ts/GitFileManager.ts",
+    "./src/ts/FileManager.ts",
+    "./src/ts/hub/TemplateHubController.tsx",
+    "./src/ts/hub/TemplateHub.tsx",
+    "./src/ts/hub/TemplateModel.ts",
+    "./src/ts/hub/TemplateDataService.ts"
+  ]
+}

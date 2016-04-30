@@ -1,0 +1,120 @@
+{
+  "manifestVersion": 1,
+  "id": "vsts-template-file-creation",
+  "version": "0.0.1",
+  "publisher": "shyykoserhiy",
+  "name": "Template Files Creation",
+  "description": "Provides a way to create files from templates like java files, enums, singletons, ... in vsts. Basically any template will do.",
+  "public": true,
+  "icons": {
+    "default": "dist/images/VSO-196x.png"
+  },
+  "categories": [
+    "Code"
+  ],
+  "tags": [
+    "template",
+    "new",
+    "file",
+    "create"
+  ],
+  "content": {
+    "details": {
+      "path": "readme.md"
+    }
+  },
+  "links": {
+    "repository": {
+      "uri": "https://github.com/ShyykoSerhiy/vsts-template-file-creation"
+    },
+    "issues": {
+      "uri": "https://github.com/ShyykoSerhiy/vsts-template-file-creation/issues"
+    }
+  },
+  "branding": {
+    "color": "rgb(0,0,0)",
+    "theme": "dark"
+  },
+  "scopes": [
+    "vso.code_write",
+    "vso.code_manage"
+  ],
+  "files": [
+    {
+      "path": "./dist/main.html",
+      "addressable": true
+    },
+    {
+      "path": "./dist/dialog.html",
+      "addressable": true
+    },
+    {
+      "path": "./dist/hub.html",
+      "addressable": true
+    },
+    {
+      "path": "./dist/bundle.js",
+      "addressable": true
+    },
+    {
+      "path": "./dist/lib/jquery.min.js",
+      "addressable": true
+    },
+    {
+      "path": "./dist/lib/VSS.SDK.js",
+      "addressable": true
+    },
+    {
+      "path": "./dist/lib/VSS.SDK.min.js",
+      "addressable": true
+    },
+    {
+      "path": "./dist/images",
+      "addressable": true
+    }
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "addFile",
+      "targets": [
+        "ms.vss-code-web.source-tree-item-menu"
+      ],
+      "type": "ms.vss-web.action",
+      "properties": {
+        "text": "Create a new file from template",
+        "title": "Create a new file from template",
+        "icon": "dist/images/VSO-16x.png",
+        "groupId": "editing",
+        "uri": "./dist/main.html"
+      }
+    },
+    {
+      "id": "createNewFileDialog",
+      "targets": [
+        ".dialog"
+      ],
+      "type": "ms.vss-web.control",
+      "properties": {
+        "uri": "./dist/dialog.html"
+      }
+    },
+    {
+      "id": "templatesHub",
+      "type": "ms.vss-web.hub",
+      "description": "Adds a 'Templates' hub to the Code hub group.",
+      "targets": [
+        "ms.vss-code-web.code-hub-group"
+      ],
+      "properties": {
+        "name": "Templates",
+        "order": 999,
+        "uri": "./dist/hub.html"
+      }
+    }
+  ]
+}

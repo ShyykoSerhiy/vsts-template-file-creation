@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Management</title>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<div>Users will never see this page.</div>
+<script type="text/javascript">
+    VSS.init(
+            {
+                explicitNotifyLoaded: true,
+                setupModuleLoader: true,
+                usePlatformScripts: true,
+                usePlatformStyles: true
+            });
+    VSS.ready(function () {
+        require(["dist/bundle"], function (main) {
+            VSS.notifyLoadSucceeded();
+        });
+    });
+</script>
+</body>
+</html>

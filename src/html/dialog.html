@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Create new file</title>
+    <script src="lib/jquery.min.js"></script>
+    <style>
+        body {
+            min-height: 153px;
+        }
+
+        .file-directory {
+            display: flex;
+        }
+
+        .description {
+            float: left;
+            padding-right: 5px;
+        }
+
+        .directory {
+            padding-right: 5px;
+            float: left;
+        }
+
+        .field-input {
+            width: 100%;
+        }
+
+        .fields {
+            margin-top: 5px;
+        }
+
+        .comment-input {
+            width: 100%;
+            height: 50px;
+        }
+
+        .error-container {
+            background-color: #e6b9b9;
+            font-style: italic;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="fields">
+    <label>Template:</label>
+</div>
+<div class="templateCombo">
+</div>
+<div class="file-directory">
+    <div class="description">Create a new file in</div>
+    <div class="directory">$(TBD)</div>
+</div>
+<div class="fields">
+    <label for="fileName">File name</label>
+</div>
+<input class="field-input" type="text" id="fileName" value="NewFile"/>
+<div class="error-container"></div>
+<div class="fields">
+    <label for="comment">Checkin comment</label>
+</div>
+<textarea class="comment-input" id="comment">Added new file</textarea>
+
+
+<script src="lib/VSS.SDK.min.js"></script>
+<script type="text/javascript">
+    VSS.init({
+        explicitNotifyLoaded: true,
+        usePlatformScripts: true,
+        usePlatformStyles: true
+    });
+
+    VSS.ready(function () {
+        require(["dist/bundle"], function (main) {
+            VSS.notifyLoadSucceeded();
+        });
+    });
+</script>
+</body>
+</html>
