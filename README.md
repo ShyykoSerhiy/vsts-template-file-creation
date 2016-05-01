@@ -1,10 +1,10 @@
-## Create folders without cloning ##
+## Create files from templates ##
 
 In Visual Studio Team Services you can add, edit, and delete files right from the web. However, if you need to create files
 from the specific template it's not that easy. This extension provides a way to create files from templates that you can
 specify yourself.
 
-![Create a new folder](dist/images/files.png)
+![Create a new file](dist/images/files.png)
 
 Works with both Git and Team Foundation Version Control source repositories.
 
@@ -17,7 +17,7 @@ Works with both Git and Team Foundation Version Control source repositories.
 
 ## Steps to add or change template ##
 
-![Create a new folder](dist/images/templates.png)
+![Create a new template](dist/images/templates.png)
 
 1. From the Code hub (Templates subhub), click on  **Add new template** button in top left corner.
 2. Specify name of the template, name template and the template itself.
